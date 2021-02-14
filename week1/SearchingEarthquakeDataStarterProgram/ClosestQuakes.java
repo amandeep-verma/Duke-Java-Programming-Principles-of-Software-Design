@@ -7,13 +7,13 @@
  */
 
 import java.util.*;
-
 public class ClosestQuakes {
     public ArrayList<QuakeEntry> getClosest(ArrayList<QuakeEntry> quakeData, Location current, int howMany) {
+ 
         ArrayList<QuakeEntry> copy = new ArrayList<QuakeEntry>(quakeData);
         ArrayList<QuakeEntry> ret = new ArrayList<QuakeEntry>();
         
-        for (int i = 0; i < howMany; i++)
+        for (int i = 0; i < howMany && i< quakeData.size() ; i++)
         {
             int minIndex = 0;
             double minDistance = quakeData.get(0).getLocation().distanceTo(current);

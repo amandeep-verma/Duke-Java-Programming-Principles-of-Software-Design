@@ -21,7 +21,7 @@ public class LargestQuakes {
         System.out.println("Largest Index " + indexOfLargest(list) +" and magnitude " + list.get(indexOfLargest(list)).getMagnitude());
         */
        
-       ArrayList<QuakeEntry> ans = getLargest(list, 10);
+       ArrayList<QuakeEntry> ans = getLargest(list, 50);
        for(QuakeEntry qe: ans)
        {
            System.out.println(qe);

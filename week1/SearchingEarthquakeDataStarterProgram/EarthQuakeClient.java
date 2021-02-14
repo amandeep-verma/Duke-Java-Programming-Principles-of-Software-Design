@@ -6,8 +6,7 @@ public class EarthQuakeClient {
         // TODO Auto-generated constructor stub
     }
 
-    public ArrayList<QuakeEntry> filterByMagnitude(ArrayList<QuakeEntry> quakeData,
-    double magMin) {
+    public ArrayList<QuakeEntry> filterByMagnitude(ArrayList<QuakeEntry> quakeData, double magMin) {
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
         for(QuakeEntry qe: quakeData)
         {
@@ -17,9 +16,7 @@ public class EarthQuakeClient {
         return answer;
     }
 
-    public ArrayList<QuakeEntry> filterByDistanceFrom(ArrayList<QuakeEntry> quakeData,
-    double distMax,
-    Location from) {
+    public ArrayList<QuakeEntry> filterByDistanceFrom(ArrayList<QuakeEntry> quakeData, double distMax, Location from) {
         distMax = distMax*1000; // conversion to metres
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
         for(QuakeEntry qe: quakeData)
@@ -69,7 +66,7 @@ public class EarthQuakeClient {
         //Location city = new Location(35.988, -78.907);
         
         // This location is Bridgeport, CA
-         Location city =  new Location(38.17, -118.82);
+        Location city =  new Location(38.17, -118.82);
         
         ArrayList<QuakeEntry> biglist = filterByDistanceFrom(list, 1000, city);
         System.out.println("close to me = "+biglist.size());
@@ -98,8 +95,8 @@ public class EarthQuakeClient {
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         dumpCSV(list);
-        double minDepth=-8000.0;
-        double maxDepth=-5000.0;
+        double minDepth=-4000.0;
+        double maxDepth=-2000.0;
         System.out.println("# quakes read: " + list.size());
         System.out.println("Find quakes with depth between "+minDepth+" and "+maxDepth);
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
@@ -160,7 +157,7 @@ public class EarthQuakeClient {
         dumpCSV(list);
         
         System.out.println("# quakes read: " + list.size());
-        String phrase="Creek";
+        String phrase="Can";
         String where="any";
         
         ArrayList<QuakeEntry> answer = filterByPhrase(list, where, phrase);

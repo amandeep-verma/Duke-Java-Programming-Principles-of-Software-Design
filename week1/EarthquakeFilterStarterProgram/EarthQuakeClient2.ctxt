@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=EarthQuakeClient2
+comment1.params=
+comment1.target=EarthQuakeClient2()
+comment2.params=quakeData\ f
+comment2.target=java.util.ArrayList\ filter(java.util.ArrayList,\ Filter)
+comment3.params=
+comment3.target=void\ quakesWithFilter()
+comment4.params=
+comment4.target=void\ testMatchAllFilter()
+comment5.params=
+comment5.target=void\ testMatchAllFilter2()
+comment6.params=
+comment6.target=void\ createCSV()
+comment6.text=\n\ \ \ \ public\ void\ quakesWithFilter()\ {\ \n\ \ \ \ \ \ \ \ EarthQuakeParser\ parser\ \=\ new\ EarthQuakeParser();\ \n\ \ \ \ \ \ \ \ //String\ source\ \=\ "http\://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";\n\ \ \ \ \ \ \ \ String\ source\ \=\ "data/nov20quakedata.atom";\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ list\ \ \=\ parser.read(source);\ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ System.out.println("read\ data\ for\ "+list.size()+"\ quakes");\n\ \ \ \ \ \ \ \ Location\ Denver\ \=\ new\ Location(39.7392,\ -104.9903);\n\ \ \ \ \ \ \ \ Filter\ f1\ \=\ new\ DistanceFilter(Denver,1000000);\ \n\ \ \ \ \ \ \ \ Filter\ f2\ \=\ new\ PhraseFilter("end",\ "a");\ \n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ m6\ \ \=\ filter(list,\ f1);\ \n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ m7\ \ \=\ filter(m6,\ f2);\ \n\ \ \ \ \ \ \ \ System.out.println("The\ total\ number\ of\ filtered\ quakes\ are\ "+m7.size());\n\ \ \ \ \ \ \ \ for\ (QuakeEntry\ qe\:\ m7)\ {\ \n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(qe);\n\ \ \ \ \ \ \ \ }\ \n\ \ \ \ }\n
+comment7.params=list
+comment7.target=void\ dumpCSV(java.util.ArrayList)
+numComments=8
